@@ -1,0 +1,133 @@
+[
+  {
+    "name": "nyt-a",
+    "value": "vttchxMhm2cY8nuALkkKXa",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1751732548.480548,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "ph_foZTeM1AW8dh5WkaofxTYiInBhS4XzTzRqLs50kVziw_posthog",
+    "value": "%7B%22distinct_id%22%3A%22188f4b498202b11-088cb636cc579d-1b525634-13c680-188f4b498213fe5%22%2C%22%24device_id%22%3A%22188f4b498202b11-088cb636cc579d-1b525634-13c680-188f4b498213fe5%22%2C%22%24user_state%22%3A%22anonymous%22%2C%22extension_version%22%3A%221.5.5%22%2C%22%24sesid%22%3A%5B1687917744608%2C%22188ffbcd1e01d7c-06851bb66237b3-1b525634-13c680-188ffbcd1e13e4d%22%2C1687917744608%5D%2C%22%24session_recording_enabled_server_side%22%3Afalse%2C%22%24autocapture_disabled_server_side%22%3Afalse%2C%22%24active_feature_flags%22%3A%5B%5D%2C%22%24enabled_feature_flags%22%3A%7B%22enable-session-recording%22%3Afalse%2C%22sourcing%22%3Afalse%2C%22only-company-edit%22%3Afalse%2C%22job-lists%22%3Afalse%7D%2C%22%24feature_flag_payloads%22%3A%7B%7D%7D",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1720873645,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "regi_cookie",
+    "value": "regi_id=106254530",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1751233525.463071,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "name": "nyt-purr",
+    "value": "cfhhcfhhhckfhdfhhga",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1751732548.480725,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "datadome",
+    "value": "fO4lQNARrVxExFYsBfY5iFjWH3Nq5SBQxtW7BgijEmJnTZW3pWd0DQLeY942mPLO6LTx7jqSqaedj2Ct471Zudo72FaoIghvrki0dQCLkXKEg0xh4OK7SUVBt9IG3S_n",
+    "domain": ".www.nytimes.com",
+    "path": "/",
+    "expires": 1751233525.061226,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "purr-cache",
+    "value": "<K0<r<C_<G_<S0<a1<ur<T0<Tp_<Tp1_<Tp2_<Tp3_<Tp4_<Tp7_",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1754319609.86282,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "nyt-auth-method",
+    "value": "username",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1735701609.8635,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "nyt-b3-traceid",
+    "value": "e4096ebbb2084d83bdc213ad371f0c16",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "nyt-jkidd",
+    "value": "uid=106254530&lastRequest=1720149611566&activeDays=%5B0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C1%2C0%2C0%2C0%2C0%2C0%2C1%5D&adv=3&a7dv=2&a14dv=2&a21dv=3&lastKnownType=regi&newsStartDate=&entitlements=",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1751685611.48171,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "name": "nyt-gdpr",
+    "value": "0",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1720218437.168841,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "name": "nyt-geo",
+    "value": "US",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1720218148.068328,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "name": "NYT-S",
+    "value": "0^CBgSLQjpzJ20BhDDvqC0BhoSMS2rb9F63ZK_jXP0SmMF1gRtIMKh1TI4ja7d8AVCABpAX9bVpNImNX3mxS6zIeuwkAmb87LqxM7UO5OoNvG_wmMX35pWb9PcZGCbVwWPxviGk3uEiJLuqlcN7p_7KYqDAw==",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1751732811.550984,
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "SIDNY",
+    "value": "CBgSLQjpzJ20BhDDvqC0BhoSMS2rb9F63ZK_jXP0SmMF1gRtIMKh1TI4ja7d8AVCABpAX9bVpNImNX3mxS6zIeuwkAmb87LqxM7UO5OoNvG_wmMX35pWb9PcZGCbVwWPxviGk3uEiJLuqlcN7p_7KYqDAw==",
+    "domain": ".nytimes.com",
+    "path": "/",
+    "expires": 1727972811.551046,
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "_dd_s",
+    "value": "",
+    "domain": "www.nytimes.com",
+    "path": "/",
+    "expires": 1720199207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  }
+]
