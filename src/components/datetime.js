@@ -6,7 +6,7 @@ import Clock from 'react-live-clock';
 const datetime  = () => {
     return (
         <div style={{ textAlign: 'left' }}>
-        <h1 style={{ fontSize: '3.2em', marginBottom: "0px"}}>
+        <h1 style={{ fontSize: '3.2em', marginBottom: "0px", marginTop: "0px"}}>
             <Clock
                     format={'hh:mm:ss A'}
                     ticking={true}

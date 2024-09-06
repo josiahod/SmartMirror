@@ -47,7 +47,7 @@ const WeatherTable = ({ data }) => {
   return (
     <div> 
     {loading ? ( <p> Loading </p> ) : (
-    <TableContainer component={Paper} sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} style={{width: 330}}>
+    <TableContainer component={Paper} sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} style={{width: 330, marginTop: 0}}>
       <Table aria-label="weather table">
         <TableHead>
           <TableRow style={{height: 50}}>

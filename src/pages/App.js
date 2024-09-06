@@ -9,6 +9,7 @@ import Letterboxd from '../components/letterboxd';
 import WeatherCard from '../components/weathercard';
 import ReloadPage from '../components/reloadpage';
 import TopAlbums from '../components/topAlbums';
+import Carousel from '../components/carousel';
 
 
 
@@ -17,10 +18,10 @@ import TopAlbums from '../components/topAlbums';
 const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: '#ffcc80', // Custom background color
-    color: '#ffffff', // Custom text color
+    color: 'red', // Custom text color
     borderRadius: '20px', // Rounded corners
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Shadow effect
-    padding: '10px 20px', // Padding
+    padding: '0px 0px', // Padding
     fontWeight: 'bold', // Bold text
     '&:hover': {
       backgroundColor: '#ffb74d', // Darker background color on hover
@@ -57,8 +58,9 @@ function App() {
       <div className="top-left"> <ClockDate/> <TopAlbums/> </div>
       <div className="top-right"><WeatherCard/> </div>
       {/* <div className="top-right"> <WeatherWidget/> </div> */}
-      <div className="bottom-left" style={{ textAlign: 'center' }}> <h3> Recent Watches </h3> <Letterboxd/> </div>
+      <div className="bottom-left" style={{ textAlign: 'center'}}> <Letterboxd/> </div>
       <div className='bottom-right' style={{ textAlign: 'center' }}>  Wordle <Wordle/> </div>
+      <Carousel> </Carousel>
       <div> <ReloadPage/> </div>
 
       {/* <Button className={classes.button} variant="contained" onClick={fetchAuthUrl}>Sign In!</Button> */}

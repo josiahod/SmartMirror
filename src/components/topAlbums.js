@@ -14,7 +14,7 @@ const TopAlbums = () => {
                 }
                 const data = await response.json();
                 console.log(data.albums.items.slice(0,5));
-                setAlbumData(data.albums.items.slice(0,5));
+                setAlbumData(data.albums.items.slice(0,3));
                
             } catch (error) {
                 console.error('Error fetching album data:', error);
@@ -32,7 +32,7 @@ const TopAlbums = () => {
     }
 
     return (
-        <span style={{fontSize: "30px" }}>
+        <span style={{fontSize: "12px" }}>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -40,11 +40,11 @@ const TopAlbums = () => {
 
                      {albumData ? (
                         <span> 
-                            <h3 style={{ color: 'red', fontSize: "30px"}}>top albums this week</h3>
+                            <h3 style={{ color: 'white', fontSize: "20px"}}>Top Albums This Week</h3>
                                 {  albumData.map((album, index) => (
-                                <div key={index}>
-                                    <span styles={{fontSize: "40px", marginTop: "0px", marginBottom: "0px"}}>{album.album?.name ? album.album.name.length > 25 ? album.album.name.substring(0, 16) + "..." : album.album.name : "Album not available"}{" · "}{album.album.artists[0]?.name}</span>
-                                </div>
+                                <span key={index} style={{ margin: '5px', display: 'inline-block'}}>
+                                    <img src={album.album.image} style={{ width: '176px', height: 'auto', borderRadius: '2px'}} /> 
+                                </span>
                             ))}   
                         </span>
                     ) 

@@ -14,7 +14,7 @@ const Letterboxd = () => {
                 }
                 const data = await response.json();
                 console.log(data.diary.slice(0,5));
-                setMovieData(data.diary.slice(0, 5));
+                setMovieData(data.diary.slice(0, 3));
                
             } catch (error) {
                 console.error('Error fetching Wordle data:', error);
@@ -37,12 +37,12 @@ const Letterboxd = () => {
                 <p>Loading...</p>
             ) : (
                 <div>
-
                      {movieData ? (
                         <div> 
                             {  movieData.map((movie, index) => (
-                                <div key={index}>
-                                    <div styles={{marginTop: "0px", marginBottom: "0px"}}>{movie.film?.title ? movie.film.title : "Title not available"}:{movie.rating.text}</div>
+                                <div key={index} style={{ display: 'inline-block', margin: '10px', textAlign: 'center'}}>
+                                <img src={movie.film.image.medium} style={{ width: '170px', height: 'auto', borderRadius: '2px'}} /> 
+                                <div styles={{marginTop: "0px", marginBottom: "0px"}}>{movie.film?.title ? movie.film.title : "Title not available"}:{movie.rating.text}</div>
                                 </div>
                             ))}     
                         </div>
