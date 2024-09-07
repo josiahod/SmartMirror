@@ -3,157 +3,17 @@ const bodyParser = require('body-parser')
 const path = require('path');
 var FitbitApiClient = require("fitbit-node");
 const cors = require('cors');
-var admin = require("firebase-admin");
-var serviceAccount = require("/home/josiah/Documents/fitbitchallenge-main/src/fitbitchallenge-2dfee-firebase-adminsdk-k7iih-e9010e3a3e.json");
 const { get } = require('http');
 const fs = require('fs');
 const axios = require('axios');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-const db = admin.firestore();
-var steps = [];
-
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 
-const client = new FitbitApiClient({
-    clientId: "23PK5R",
-    clientSecret: "f8a0ebde9e9fab6f3a49d706da3d1a59",
-    apiVersion: '1.2' // 1.2 is the default
-});
-const redirectUrl= "http://localhost:3000/Code";
-
-
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
-});
-
-
-app.get('/authcode', function (req, res) {
-    console.log(req.headers.codevalue);
-    client.getAccessToken(req.headers.codevalue, redirectUrl)
-        .then(tokenData => {
-            console.log('Access Token:', tokenData.access_token);
-            getName(tokenData.access_token);
-        })
-        .catch(error => {
-            console.error('Error:', error.context);
-        });
-
-    function getName(accessToken)
-    {
-    client.get('/profile.json', accessToken)
-        .then(profileData => {
-          console.log('Profile Data:', profileData[0].user.displayName);
-          addAuth(profileData[0].user.displayName, accessToken);
-          res.json({done:"finished"});
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
-   });
-
-app.get('/', function (req, res) {
-    const scope = "activity profile sleep"
-    const urlAuth = client.getAuthorizeUrl(scope, redirectUrl);
-    //console.log(urlAuth);
-  res.json({url: urlAuth});
-});
-
-function addAuth(name, token)
-{
-console.log("push to database");
-
-  const collectionRef = db.collection('Users');
-  const docRef = collectionRef.doc('keys'); // Optionally specify a document ID  
-  name = name.replace(/\./g, '');
-  const data = {
-    [name]: token,
-  };
-
-  console.log(data);
-  
-
-  docRef.update(data)
-    .then(() => {
-      console.log('Document successfully written!');
-    })
-    .catch((error) => {
-      console.error('Error writing document: ', error);
-    });
-}
-
-app.get('/addSteps', function (req, res)
- {
-
-  const docRef = db.collection('Users').doc('keys');
-
-  docRef.get()
-  .then(doc => {
-    if (!doc.exists) {
-      console.log('No such document!');
-    } else {
-      const data = doc.data();
-      for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-
-          getSteps(data[key], key, Object.keys(data).length);
-        }
-      }
-      
-    }
-  })
-  .catch(err => {
-    console.error('Error getting document', err);
-  });
-
-  
-  steps = [];
-
-  function getSteps(tableToken, name, datalength)
-  {
-    var todaydate = getCurrentDate();
-    console.log(todaydate);
-    client.get(`/activities/date/${todaydate}.json`, tableToken)
-    .then(dailydata => {
-      console.log('Today\'s Data:', dailydata[0].summary.steps);
-      steps.push({"name": name, "steps":  dailydata[0].summary.steps});
-      steps.length >= datalength ? res.json({"data": steps}) : "";
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      res.json({"data": steps});
-    }); 
-  }
-});
-
-app.get('/sleep', function (req, res) {
-  const sleeptoken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM1BLNVIiLCJzdWIiOiI0UldDVEQiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJwcm8gcnNsZSIsImV4cCI6MTcyMDkzMTcyMywiaWF0IjoxNzIwOTAyOTIzfQ.c0t1PsuzVTRi88nMZ5Y7xW1mLOciamEVL46ZCSZQQRI";
-  var todaydate = getCurrentDate();
-    console.log(todaydate);
-    client.get(`/sleep/date/${todaydate}.json`, sleeptoken)
-    .then(dailydata => {
-      console.log(dailydata);
-      var indexofmain = 0;
-      for(var j = 0; j < dailydata[0].sleep.length; j++)
-      {
-         if(dailydata[0].sleep[j].isMainSleep)
-         {
-          indexofmain = j;
-         }
-      }
-      res.json({sleepdata: dailydata[0].sleep[j-1].levels.summary});
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      res.json({"data": dailydata});
-    }); 
 });
 
 app.get('/wordle', function (req, res) {

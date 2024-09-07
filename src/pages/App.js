@@ -60,7 +60,6 @@ function App() {
       {/* <div className="top-right"> <WeatherWidget/> </div> */}
       <div className="bottom-left" style={{ textAlign: 'center'}}> <Letterboxd/> </div>
       <div className='bottom-right' style={{ textAlign: 'center' }}>  Wordle <Wordle/> </div>
-      <Carousel> </Carousel>
       <div> <ReloadPage/> </div>
 
       {/* <Button className={classes.button} variant="contained" onClick={fetchAuthUrl}>Sign In!</Button> */}
