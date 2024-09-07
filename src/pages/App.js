@@ -55,12 +55,12 @@ function App() {
   
   return (
     <div className="container">
-      <div className="top-left"> <ClockDate/> <TopAlbums/> </div>
+      <div className="top-left"> <ClockDate/> <Carousel/> </div>
       <div className="top-right"><WeatherCard/> </div>
-      {/* <div className="top-right"> <WeatherWidget/> </div> */}
-      <div className="bottom-left" style={{ textAlign: 'center'}}> <Letterboxd/> </div>
+      <div className="bottom-left" style={{ textAlign: 'center'}}> </div>
       <div className='bottom-right' style={{ textAlign: 'center' }}>  Wordle <Wordle/> </div>
       <div> <ReloadPage/> </div>
+      
 
       {/* <Button className={classes.button} variant="contained" onClick={fetchAuthUrl}>Sign In!</Button> */}
          <div>

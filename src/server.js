@@ -142,7 +142,7 @@ app.get('/albums', function (req, res) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                console.log(data);
+                console.log("got albums");
                 res.json({albums: data})
     } catch (error) {
       console.error("Error getting albums", error);

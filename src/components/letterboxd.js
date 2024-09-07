@@ -39,6 +39,7 @@ const Letterboxd = () => {
                 <div>
                      {movieData ? (
                         <div> 
+                            <h3 style={{ color: 'white', fontSize: "20px", textAlign: 'left'}}>Recent Watches</h3>
                             {  movieData.map((movie, index) => (
                                 <div key={index} style={{ display: 'inline-block', margin: '10px', textAlign: 'center'}}>
                                 <img src={movie.film.image.medium} style={{ width: '170px', height: 'auto', borderRadius: '2px'}} /> 
