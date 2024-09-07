@@ -32,7 +32,7 @@ const Letterboxd = () => {
     }
 
     return (
-        <div style={{ textAlign: 'center', fontSize: "20px" }}>
+        <div style={{ textAlign: 'left', fontSize: "20px" }}>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -41,9 +41,9 @@ const Letterboxd = () => {
                         <div> 
                             <h3 style={{ color: 'white', fontSize: "20px", textAlign: 'left'}}>Recent Watches</h3>
                             {  movieData.map((movie, index) => (
-                                <div key={index} style={{ display: 'inline-block', margin: '10px', textAlign: 'center'}}>
+                                <div key={index} style={{ display: 'inline-block', margin:"10px", marginLeft: '0px', marginTop: "0px", textAlign: 'left'}}>
                                 <img src={movie.film.image.medium} style={{ width: '170px', height: 'auto', borderRadius: '2px'}} /> 
-                                <div styles={{marginTop: "0px", marginBottom: "0px"}}>{movie.film?.title ? movie.film.title : "Title not available"}:{movie.rating.text}</div>
+                                <div style={{marginTop: "0px", marginBottom: "0px", textAlign: "center"}}>{movie.film?.title ? movie.film.title : "Title not available"}:{movie.rating.text}</div>
                                 </div>
                             ))}     
                         </div>
