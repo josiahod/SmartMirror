@@ -136,7 +136,7 @@ app.get('/albums', function (req, res) {
   (async () => {
     try {
       const { lastSundayUnix, nextSundayUnix } = getLastSundayAndNextSundayTimestamps();
-      const response = await fetch( `https://api.stats.fm/api/v1/users/josiahodunade/top/albums?after=${lastSundayUnix}&before=${nextSundayUnix}`); 
+      const response = await fetch( `https://api.stats.fm/api/v1/users/{username}/top/albums?after=${lastSundayUnix}&before=${nextSundayUnix}`); 
                 if (!response.ok) 
                 {
                     throw new Error('Network response was not ok');
